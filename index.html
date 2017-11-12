@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="author" content="Tomasz Rybacki">
+  <meta name="keywords" content="gra">
+  <meta name="description" content="Złam kombinację do zamku szyfrowego.">
+
+  <title>Simon Game</title>
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon96x96.png">
+  <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400;subset=latin-ext" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+  <div id="modal-start">
+    <div class="group">
+      <img src="images/padlock.png" alt="kłódka-ikona">
+      <h1 class="title">ZASADY</h1>
+    </div>
+    <p class="txt">Aby wygrać musisz złamać szyfr, poprzez zapamiętanie kombinacji 10 kolejnych przesunięć mechanizmu szyfrującego.</p>
+    <p class="txt">W każdej rundzie długość kombinacji będzie wzrastać o jedno dodatkowe przesunięcie. Przed tobą 10 rund. Powodzenia !</p>
+    <button class="button" id="start">Start</button>
+  </div>
+
+  <div id="modal-win">
+    <h1 class="title">WYGRAŁEŚ !</h1>
+    <p class="txt">Gratulacje, udało Ci się złamać szyfr.</p>
+    <button class="button" id="win">Zagraj ponownie</button>
+  </div>
+
+  <div id="modal-lose">
+    <h1 class="title">PRZEGRAŁEŚ !</h1>
+    <p class="txt" id="lose-txt">Nie powinieneś tego widzieć.</p>
+    <button class="button" id="lose">Zagraj ponownie</button>
+  </div>
+
+  <div id="lock-container">
+    <div id="lock">
+      <div id="circle-mask"></div>
+      <div id="rectangle-mask"><p class="round">Runda</p><p class="round" id="number">1</p></div>
+    </div>
+    <div id="lock-body">
+      <div id="combination">
+
+        <div class="hov" id="sym1">
+          <div class="code">
+            <p class="symbol">0</p>
+          </div>
+          <div class="code">
+            <p class="symbol">1</p>
+          </div>
+          <div class="code">
+            <p class="symbol">2</p>
+          </div>
+          <div class="code">
+            <p class="symbol">3</p>
+          </div>
+          <div class="code">
+            <p class="symbol">4</p>
+          </div>
+          <div class="code">
+            <p class="symbol">5</p>
+          </div>
+          <div class="code">
+            <p class="symbol">6</p>
+          </div>
+          <div class="code">
+            <p class="symbol">7</p>
+          </div>
+          <div class="code">
+            <p class="symbol">8</p>
+          </div>
+          <div class="code">
+            <p class="symbol">9</p>
+          </div>
+        </div>
+
+        <div class="hov" id="sym2">
+          <div class="code">
+            <p class="symbol">0</p>
+          </div>
+          <div class="code">
+            <p class="symbol">1</p>
+          </div>
+          <div class="code">
+            <p class="symbol">2</p>
+          </div>
+          <div class="code">
+            <p class="symbol">3</p>
+          </div>
+          <div class="code">
+            <p class="symbol">4</p>
+          </div>
+          <div class="code">
+            <p class="symbol">5</p>
+          </div>
+          <div class="code">
+            <p class="symbol">6</p>
+          </div>
+          <div class="code">
+            <p class="symbol">7</p>
+          </div>
+          <div class="code">
+            <p class="symbol">8</p>
+          </div>
+          <div class="code">
+            <p class="symbol">9</p>
+          </div>
+        </div>
+
+        <div class="hov" id="sym3">
+          <div class="code">
+            <p class="symbol">0</p>
+          </div>
+          <div class="code">
+            <p class="symbol">1</p>
+          </div>
+          <div class="code">
+            <p class="symbol">2</p>
+          </div>
+          <div class="code">
+            <p class="symbol">3</p>
+          </div>
+          <div class="code">
+            <p class="symbol">4</p>
+          </div>
+          <div class="code">
+            <p class="symbol">5</p>
+          </div>
+          <div class="code">
+            <p class="symbol">6</p>
+          </div>
+          <div class="code">
+            <p class="symbol">7</p>
+          </div>
+          <div class="code">
+            <p class="symbol">8</p>
+          </div>
+          <div class="code">
+            <p class="symbol">9</p>
+          </div>
+        </div>
+
+        <div class="hov" id="sym4">
+          <div class="code">
+            <p class="symbol">0</p>
+          </div>
+          <div class="code">
+            <p class="symbol">1</p>
+          </div>
+          <div class="code">
+            <p class="symbol">2</p>
+          </div>
+          <div class="code">
+            <p class="symbol">3</p>
+          </div>
+          <div class="code">
+            <p class="symbol">4</p>
+          </div>
+          <div class="code">
+            <p class="symbol">5</p>
+          </div>
+          <div class="code">
+            <p class="symbol">6</p>
+          </div>
+          <div class="code">
+            <p class="symbol">7</p>
+          </div>
+          <div class="code">
+            <p class="symbol">8</p>
+          </div>
+          <div class="code">
+            <p class="symbol">9</p>
+          </div>
+        </div>
+
+      </div>
+      <h2 id="check">gotowe</h2>
+    </div>
+
+  </div>
+
+  <script src="scripts/jquery-3.2.0.min.js"></script>
+  <script src="scripts/code.js"></script>
+</body>
+
+</html>

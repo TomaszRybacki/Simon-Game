@@ -1,0 +1,148 @@
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    min-height: 100vh;
+  }
+
+  /* TOP */
+  #lock-container {
+    width: 400px;
+    min-width: 400px;
+    height: 400px;
+    min-height: 400px;
+    border-radius: 50%;
+    background: lightgray;
+    box-shadow: 0 0 20px 20px lightgray;
+
+    @include mobile {
+    width: 300px;
+    min-width: 300px;
+    height: 300px;
+    min-height: 300px;
+    }
+  }
+
+  #lock {
+    width: 200px;
+    height: 150px;
+    background: #ADA996;
+    background: linear-gradient(-180deg, $gradient1, $gradient2, $gradient3, $gradient4);
+    position: relative;
+    top: 0px;
+    left: 100px;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    border: solid 4px $lock-light;
+    border-bottom: none;
+    box-shadow: 0px 6px 4px 6px;
+    z-index: 1;
+
+    @include mobile {
+    position: relative;
+    top: 0px;
+    left: 45px;
+    }
+  }
+
+  #circle-mask {
+    width: 120px;
+    height: 100px;
+    background: lightgray;
+    border-radius: 80px;
+    position: relative;
+    top: 30px;
+    left: 40px;
+    border: solid 4px rgb(26, 30, 29);
+    box-sizing: border-box;
+    z-index: 2;
+  }
+
+  #rectangle-mask {
+    width: 120px;
+    height: 80px;
+    background: lightgray;
+    position: relative;
+    top: -25px;
+    left: 40px;
+    border: solid 4px rgb(26, 30, 29);
+    border-top: none;
+    border-bottom: none;
+    box-sizing: border-box;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #lock-body {
+    width: 250px;
+    height: 200px;
+    background: $body-mid;
+    background: #fceabb;
+    background: linear-gradient(0deg, $body-dark, $body-mid);
+    position: relative;
+    top: 0px;
+    left: 72px;
+    border: solid 4px $body-light;
+    border-bottom-color: $body-mid;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    box-shadow: 0px 6px 4px 6px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+
+    @include mobile {
+    position: relative;
+    top: 0px;
+    left: 20px;
+    }
+  }
+
+#sym1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    pointer-events: all;
+    cursor: pointer;
+  }
+
+  #sym2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    pointer-events: all;
+    cursor: pointer;
+  }
+
+  #sym3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    pointer-events: all;
+    cursor: pointer;
+  }
+
+  #sym4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    pointer-events: all;
+    cursor: pointer;
+  }

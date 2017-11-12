@@ -1,0 +1,117 @@
+  .button {
+    margin: 20px;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    font-size: $medium;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: $body-dark;
+    color: black;
+    border: none;
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    position: relative;
+
+    @include mobile {
+    margin: 10px;
+    }
+  }
+
+  #combination {
+    margin-top: 40px;
+    width: 200px;
+    height: 75px;
+    background: $body-mid;
+    border-radius: 10px;
+    box-shadow: 0 -2px 2px 1px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    overflow: hidden;
+  }
+
+  /* SYMBOLS */
+
+
+  .code {
+    width: 35px;
+    height: 60px;
+    background: $body-dark;
+    border-radius: 8px;
+    border: solid 2px $body-light;
+    box-shadow: 0 2px 2px 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    pointer-events: none;
+    cursor: pointer;
+    margin: 4px 0;
+  }
+
+  .symbol {
+    font-family: 'Black Ops One', cursive;
+    font-size: $xlarge;
+    color: $body-light;
+    text-shadow: 0 0 10px black;
+    pointer-events: none;
+  }
+
+  h2 {
+    font-family: 'Black Ops One', cursive;
+    font-size: $xlarge;
+    padding: 20px;
+    color: $body-light;
+    text-shadow: 0 0 10px black;
+    text-transform: uppercase;
+    pointer-events: all;
+  }
+
+  .round {
+    text-align: center;
+    font-size: $large;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase
+  }
+
+  #number {
+    font-size: $xlarge;
+  }
+
+
+  .group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title {
+    font-family: 'Black Ops One', cursive;
+    font-size: $epic;
+    padding: 20px;
+    color: $body-dark;
+
+    @include mobile {
+    font-size: $large;
+    padding: 10px;
+    }
+  }
+
+  .txt {
+    text-align: center;
+    max-width: 600px;
+    font-family: 'Lato', sans-serif;
+    font-size: $medium;
+    padding: 20px;
+    line-height: 120%;
+    color: $body-light;
+
+    @include mobile {
+    font-size: $small;
+    padding: 10px;
+    }
+  }
+
